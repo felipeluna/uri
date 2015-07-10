@@ -3,13 +3,15 @@
 
 int ** createMatrix(int size);
 void printMatrix(int **matrix, int size);
+int ** insertMiddleNumber(int ** matrix, int size);
 int main()
 {
    int size, **matrix;
    scanf("%d", &size);
-   printf("%d\n",size);  
-   matrix = createMatrix(5);
-   printMatrix(matrix, 5);
+   //printf("%d\n",size);  
+   matrix = createMatrix(size);
+   matrix = insertMiddleNumber(matrix, size);
+   printMatrix(matrix, size);
    return(0); 
 }
 
@@ -43,4 +45,9 @@ void printMatrix(int **matrix, int size)
         }
         printf("\n");
     }
+}
+int ** insertMiddleNumber(int ** matrix, int size)
+{
+    matrix[(size/2)][(size/2)] = 4;
+    return matrix;
 }
